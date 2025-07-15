@@ -10,10 +10,11 @@ func init(parent:CharacterBody2D, animations:AnimationPlayer) -> void:
 	change_state(starting_state)
 	
 func change_state(new_state:State) -> void:
-	if current_state:
-		current_state.exit()
-	current_state = new_state
-	new_state.enter()
+	if new_state.is_unlocked:
+		if current_state:
+			current_state.exit()
+		current_state = new_state
+		new_state.enter()
 	
 func process_physics(delta: float) -> void:
 	var new_state = current_state.process_physics(delta)
