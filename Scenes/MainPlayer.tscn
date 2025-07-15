@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bppncm0fpps0u"]
+
+[ext_resource type="Script" uid="uid://h3m4ki2e1vs2" path="res://Scripts/main_player.gd" id="1_0sgo8"]
+[ext_resource type="Texture2D" uid="uid://ddnysnn42otuq" path="res://icon.svg" id="1_h87yu"]
+[ext_resource type="Script" uid="uid://dr4gb6obg5hk3" path="res://Scripts/States/StateMachine.gd" id="3_6rt1g"]
+[ext_resource type="Script" uid="uid://cswy2ncu77fvp" path="res://Scripts/States/PlayerStates/jump.gd" id="4_ov71u"]
+[ext_resource type="Script" uid="uid://1tajnrplj5mr" path="res://Scripts/States/PlayerStates/idle.gd" id="4_ts1ug"]
+[ext_resource type="Script" uid="uid://cx3pn6w1e4r0b" path="res://Scripts/States/PlayerStates/move.gd" id="5_wotmp"]
+[ext_resource type="Script" uid="uid://ohl57m4cvn6o" path="res://Scripts/States/PlayerStates/fall.gd" id="6_ts1ug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sgo8"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations")]
+script = ExtResource("1_0sgo8")
+state_machine = NodePath("StateMachine")
+animations = NodePath("AnimationPlayer")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h87yu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0sgo8")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("3_6rt1g")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state")]
+script = ExtResource("4_ts1ug")
+fall_state = NodePath("../Fall")
+jump_state = NodePath("../Jump")
+move_state = NodePath("../Move")
+metadata/_custom_type_script = "uid://gnttwcs5gp8v"
+
+[node name="Move" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "fall_state", "jump_state")]
+script = ExtResource("5_wotmp")
+idle_state = NodePath("../Idle")
+fall_state = NodePath("../Fall")
+jump_state = NodePath("../Jump")
+metadata/_custom_type_script = "uid://gnttwcs5gp8v"
+
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "fall_state", "move_state")]
+script = ExtResource("4_ov71u")
+idle_state = NodePath("../Idle")
+fall_state = NodePath("../Fall")
+move_state = NodePath("../Move")
+metadata/_custom_type_script = "uid://gnttwcs5gp8v"
+
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "fall_state", "move_state")]
+script = ExtResource("6_ts1ug")
+idle_state = NodePath("../Idle")
+fall_state = NodePath(".")
+move_state = NodePath("../Move")
+metadata/_custom_type_script = "uid://gnttwcs5gp8v"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
