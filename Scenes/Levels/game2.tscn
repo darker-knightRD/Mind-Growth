@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2b2nip3s8w4n"]
+
+[ext_resource type="PackedScene" uid="uid://bppncm0fpps0u" path="res://Scenes/MainPlayer.tscn" id="1_75d0i"]
+[ext_resource type="PackedScene" uid="uid://08ly2ts2yrr4" path="res://Scenes/next_level.tscn" id="2_75d0i"]
+[ext_resource type="PackedScene" uid="uid://cu5i1w5wu1lhe" path="res://Scenes/Levels/game3.tscn" id="3_86ckt"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_75d0i")]
+position = Vector2(1002, 448)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 319)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(502, 590)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="next_level" parent="." instance=ExtResource("2_75d0i")]
+position = Vector2(225, 458)
+next_level = ExtResource("3_86ckt")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 148.0
+offset_top = 98.0
+offset_right = 188.0
+offset_bottom = 121.0
+text = "2"

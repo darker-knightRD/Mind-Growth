@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="IDKWHATTOCALLIT"
-run/main_scene="uid://dkprja6opsbsx"
+config/name="Mind-Growth"
+run/main_scene="uid://c4npyuft3dwt1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Player=""
 
 [input]
 

@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sgo8"]
 size = Vector2(128, 128)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations") groups=["Player"]]
 script = ExtResource("1_0sgo8")
 state_machine = NodePath("StateMachine")
 animations = NodePath("AnimationPlayer")
