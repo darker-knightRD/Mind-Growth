@@ -7,11 +7,9 @@ var fall_state: State
 @export
 var move_state: State
 
-@export var jump_force:float = 600.0
-
 func enter() -> void:
 	super()
-	parent.velocity.y -= gravity
+	parent.velocity.y -= jump_force
 
 func process_physics(delta:float) -> State:
 	parent.velocity.y += gravity * delta
