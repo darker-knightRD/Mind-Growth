@@ -106,6 +106,7 @@ texture = ExtResource("4_i10s3")
 
 [sub_resource type="TileSet" id="TileSet_osokm"]
 physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 25
 sources/0 = SubResource("TileSetAtlasSource_yla1s")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osokm"]
@@ -319,7 +320,7 @@ _data = {
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ds3o4")]
-position = Vector2(-860, 445)
+position = Vector2(-385, 514)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(495, 636)
