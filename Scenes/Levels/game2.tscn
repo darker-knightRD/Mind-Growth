@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2b2nip3s8w4n"]
+[gd_scene load_steps=6 format=3 uid="uid://d2b2nip3s8w4n"]
 
 [ext_resource type="PackedScene" uid="uid://bppncm0fpps0u" path="res://Scenes/MainPlayer.tscn" id="1_75d0i"]
 [ext_resource type="PackedScene" uid="uid://08ly2ts2yrr4" path="res://Scenes/next_level.tscn" id="2_75d0i"]
 [ext_resource type="PackedScene" uid="uid://cu5i1w5wu1lhe" path="res://Scenes/Levels/game3.tscn" id="3_86ckt"]
+[ext_resource type="Texture2D" uid="uid://ddnysnn42otuq" path="res://icon.svg" id="4_3o77h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 
@@ -31,3 +32,7 @@ offset_top = 98.0
 offset_right = 188.0
 offset_bottom = 121.0
 text = "2"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(539, 511)
+texture = ExtResource("4_3o77h")
