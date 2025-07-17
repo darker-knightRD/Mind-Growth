@@ -6,6 +6,7 @@
 size = Vector2(52, 17)
 
 [node name="moving_platform" type="AnimatableBody2D"]
+collision_layer = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 0.785156)

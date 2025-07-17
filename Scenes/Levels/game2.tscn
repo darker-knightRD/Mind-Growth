@@ -10,7 +10,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_75d0i")]
-position = Vector2(1002, 448)
+position = Vector2(33, 576)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 319)

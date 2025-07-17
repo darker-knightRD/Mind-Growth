@@ -39,6 +39,14 @@ Jump={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Backgroud"
+2d_physics/layer_3="Tileset"
+2d_physics/layer_4="Object"
+2d_physics/layer_5="Enemy"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
