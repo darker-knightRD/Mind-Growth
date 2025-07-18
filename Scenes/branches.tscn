@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpvb14q101td"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o2u8j"]
+b = Vector2(63, 0)
+
+[node name="branches" type="StaticBody2D"]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 7)
+shape = SubResource("SegmentShape2D_o2u8j")
+one_way_collision = true
