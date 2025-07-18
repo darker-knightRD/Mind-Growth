@@ -17,8 +17,10 @@ func process_physics(delta: float) -> State:
 	
 	var movement = Input.get_axis("Move Left", "Move Right") * move_speed
 	parent.velocity.x = movement
-	#parent.animations.flip_h = movement < 0
 	parent.move_and_slide()
+	player_sprite.flip_h = movement < 0
+	if movement == 0:
+		return idle_state
 	
 	if !parent.is_on_floor():
 		return fall_state

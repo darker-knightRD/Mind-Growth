@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://3oouqb8ml1qt"]
+[gd_scene load_steps=3 format=3 uid="uid://b1xcqc67ue2he"]
 
-[ext_resource type="Script" uid="uid://cbawld30yooq5" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://c4npyuft3dwt1" path="res://Scenes/Levels/game.tscn" id="2_48xlc"]
 
 [node name="Main Menu" type="Control" node_paths=PackedStringArray("continue_button")]
