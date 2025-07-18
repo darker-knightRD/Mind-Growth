@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfifxupsleh5w"
-path="res://.godot/imported/cave-tileset (1).webp-0eb34dbcdc942d7f51fe0402ac9f94ce.ctex"
+uid="uid://bqobxkqljfs7i"
+path="res://.godot/imported/crow-fly-animation-altarSheet.webp-f9011029184cc0220231e33dff696df4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cave-tileset (1).webp"
-dest_files=["res://.godot/imported/cave-tileset (1).webp-0eb34dbcdc942d7f51fe0402ac9f94ce.ctex"]
+source_file="res://sprite/crow-fly-animation-altarSheet.webp"
+dest_files=["res://.godot/imported/crow-fly-animation-altarSheet.webp-f9011029184cc0220231e33dff696df4.ctex"]
 
 [params]
 

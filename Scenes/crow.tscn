@@ -1,0 +1,162 @@
+[gd_scene load_steps=22 format=3 uid="uid://b7y5lbd6jkrln"]
+
+[ext_resource type="Script" uid="uid://yx5skju22gne" path="res://Scenes/crow.gd" id="1_8a70c"]
+[ext_resource type="Texture2D" uid="uid://dftrb17ui2wuv" path="res://sprite/crow-fly-animation-no-altarSheet.webp" id="1_m4os3"]
+[ext_resource type="Texture2D" uid="uid://bqobxkqljfs7i" path="res://sprite/crow-fly-animation-altarSheet.webp" id="2_66ou7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ou7"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a70c"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw0xr"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5562i"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(144, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do4gg"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(192, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wp4g"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(240, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sldlo"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(288, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t55h"]
+atlas = ExtResource("1_m4os3")
+region = Rect2(336, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxa7v"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgqgw"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjami"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwybb"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udbv3"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kdnf"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn2k7"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldw57"]
+atlas = ExtResource("2_66ou7")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxa7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ou7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a70c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw0xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5562i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do4gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wp4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sldlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t55h")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxa7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgqgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjami")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwybb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udbv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kdnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn2k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldw57")
+}],
+"loop": true,
+"name": &"flying with altar",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66ou7"]
+size = Vector2(28, 22)
+
+[node name="crow" type="Node2D"]
+z_index = 1
+script = ExtResource("1_8a70c")
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mxa7v")
+animation = &"flying with altar"
+autoplay = "flying"
+frame_progress = 0.200527
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_66ou7")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Area2D"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/Timer2" to="." method="_on_timer_2_timeout"]

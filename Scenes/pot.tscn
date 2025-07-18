@@ -87,7 +87,7 @@ size = Vector2(149, 33)
 
 [node name="pot" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_b8ggh")
 
 [node name="Node" type="Sprite2D" parent="."]
