@@ -13,5 +13,6 @@ func _go_to_next_scene() -> void:
 func save_game() -> void:
 	var saved_game = SavedGame.new()
 	saved_game.SavedLevel = next_level
+	saved_game.NoteInventory = NoteInventory.Notes
 	
 	ResourceSaver.save(saved_game, "user://save.tres")

@@ -1,14 +1,15 @@
-[gd_scene load_steps=41 format=4 uid="uid://c4npyuft3dwt1"]
+[gd_scene load_steps=42 format=4 uid="uid://c4npyuft3dwt1"]
 
 [ext_resource type="PackedScene" uid="uid://bppncm0fpps0u" path="res://Scenes/MainPlayer.tscn" id="1_ds3o4"]
 [ext_resource type="PackedScene" uid="uid://08ly2ts2yrr4" path="res://Scenes/next_level.tscn" id="2_72uep"]
 [ext_resource type="PackedScene" uid="uid://d2b2nip3s8w4n" path="res://Scenes/Levels/game2.tscn" id="3_b2ers"]
 [ext_resource type="Texture2D" uid="uid://baqfsb1ddgjus" path="res://sprite/cave-tileset.webp" id="4_i10s3"]
 [ext_resource type="Texture2D" uid="uid://bfifxupsleh5w" path="res://sprite/cave-tileset (1).webp" id="5_c11q5"]
-[ext_resource type="PackedScene" uid="uid://c7kql2bydlfxe" path="res://Scenes/moving_platform.tscn" id="5_yla1s"]
+[ext_resource type="PackedScene" uid="uid://b5kcuhd5mk4ap" path="res://Scenes/moving_platform.tscn" id="5_yla1s"]
 [ext_resource type="PackedScene" uid="uid://dlhiu0u5ye14w" path="res://Scenes/net_block.tscn" id="6_osokm"]
-[ext_resource type="PackedScene" uid="uid://dtbdr3fhfs3lp" path="res://Scenes/killzone.tscn" id="6_q2try"]
-[ext_resource type="PackedScene" uid="uid://c2kuo5djk8qqc" path="res://Scenes/pot.tscn" id="7_o86a8"]
+[ext_resource type="PackedScene" uid="uid://dtbdr3fhfs3lp" path="res://Scenes/Objects/killzone.tscn" id="6_q2try"]
+[ext_resource type="PackedScene" uid="uid://chexitbsqojjb" path="res://Scenes/Objects/note.tscn" id="10_7l4mf"]
+[ext_resource type="PackedScene" uid="uid://damxclys63n8" path="res://Scenes/Objects/pot.tscn" id="10_q2try"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 
@@ -533,7 +534,8 @@ _data = {
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ds3o4")]
-position = Vector2(-41, 75)
+position = Vector2(-1154, 384)
+move_speed = 200.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(495, 636)
@@ -546,13 +548,6 @@ shape = SubResource("WorldBoundaryShape2D_qxrlw")
 [node name="next_level" parent="." instance=ExtResource("2_72uep")]
 position = Vector2(1355, 345)
 next_level = ExtResource("3_b2ers")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 1013.0
-offset_top = 167.0
-offset_right = 1053.0
-offset_bottom = 190.0
-text = "1"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -708,22 +703,24 @@ libraries = {
 autoplay = "SIDE"
 speed_scale = 0.5
 
-[node name="pot7" type="Node2D" parent="."]
+[node name="Pots" type="Node" parent="."]
 
-[node name="pot" parent="pot7" instance=ExtResource("7_o86a8")]
-position = Vector2(244, 586)
-
-[node name="pot2" parent="pot7" instance=ExtResource("7_o86a8")]
-position = Vector2(-284, 344)
-
-[node name="pot4" parent="pot7" instance=ExtResource("7_o86a8")]
-position = Vector2(-243, 585)
-
-[node name="pot5" parent="pot7" instance=ExtResource("7_o86a8")]
-position = Vector2(-125, 589)
-
-[node name="pot6" parent="pot7" instance=ExtResource("7_o86a8")]
-position = Vector2(-172, 584)
-
-[node name="pot3" parent="pot7" instance=ExtResource("7_o86a8")]
+[node name="pot" parent="Pots" instance=ExtResource("10_q2try")]
 position = Vector2(-1203, 395)
+
+[node name="pot2" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-242, 587)
+
+[node name="pot3" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-171, 588)
+
+[node name="pot4" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-124, 588)
+
+[node name="pot5" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(245, 588)
+
+[node name="Note" parent="." instance=ExtResource("10_7l4mf")]
+position = Vector2(-1108, 381)
+note_title = "HALLO"
+Sentence = "HELLASOA"

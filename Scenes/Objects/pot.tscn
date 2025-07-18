@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://damxclys63n8"]
+
+[ext_resource type="Texture2D" uid="uid://baqfsb1ddgjus" path="res://sprite/cave-tileset.webp" id="1_qs8wi"]
+
+[sub_resource type="GDScript" id="GDScript_ccdtx"]
+script/source = "extends Area2D
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv2r3"]
+size = Vector2(13, 14)
+
+[node name="Area2D" type="Area2D"]
+script = SubResource("GDScript_ccdtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qs8wi")
+region_enabled = true
+region_rect = Rect2(2.22779, 68.0405, 12.4266, 13.5712)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_nv2r3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
