@@ -3,10 +3,12 @@ extends Node
 @export var starting_state:State
 var current_state:State
 
-func init(parent:CharacterBody2D, animations:AnimationPlayer) -> void:
+func init(parent:CharacterBody2D, animations:AnimationPlayer, move_speed:float, jump_force:float) -> void:
 	for child in get_children():
 		child.parent = parent
 		child.animations = animations
+		child.move_speed = move_speed
+		child.jump_force = jump_force
 	change_state(starting_state)
 	
 func change_state(new_state:State) -> void:
