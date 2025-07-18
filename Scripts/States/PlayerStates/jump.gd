@@ -19,7 +19,7 @@ func process_physics(delta:float) -> State:
 		
 	var movement = Input.get_axis("Move Left", "Move Right") * move_speed
 	if movement != 0:
-		#parent.animations.flip_h = movement < 0
+		player_sprite.flip_h = movement < 0
 		pass
 	parent.velocity.x = movement
 	parent.move_and_slide()

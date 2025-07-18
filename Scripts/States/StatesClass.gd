@@ -9,9 +9,10 @@ var parent:CharacterBody2D
 var animations:AnimationPlayer
 var move_speed:float
 var jump_force:float
+var player_sprite:Sprite2D
 
 func enter() -> void:
-	#animations.play(AnimationName)
+	animations.play(AnimationName)
 	pass
 	
 func exit() -> void:

@@ -4,9 +4,10 @@ extends CharacterBody2D
 @export var animations:AnimationPlayer
 @export var move_speed:float = 400.0
 @export var jump_force:float
+@export var sprite:Sprite2D
 
 func _ready() -> void:
-	state_machine.init(self, animations, move_speed, jump_force)
+	state_machine.init(self, sprite, animations, move_speed, jump_force)
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)

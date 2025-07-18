@@ -229,13 +229,15 @@ _data = {
 &"move": SubResource("Animation_10hb0")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations", "sprite") groups=["Player"]]
 z_index = 10
 collision_mask = 30
 script = ExtResource("1_0sgo8")
 state_machine = NodePath("StateMachine")
 animations = NodePath("AnimationPlayer")
+move_speed = 500.0
 jump_force = 450.0
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jsrhp")
@@ -253,6 +255,7 @@ script = ExtResource("4_ts1ug")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
 move_state = NodePath("../Move")
+AnimationName = "idle"
 is_unlocked = true
 metadata/_custom_type_script = "uid://gnttwcs5gp8v"
 
@@ -261,6 +264,7 @@ script = ExtResource("5_wotmp")
 idle_state = NodePath("../Idle")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
+AnimationName = "move"
 is_unlocked = true
 metadata/_custom_type_script = "uid://gnttwcs5gp8v"
 
