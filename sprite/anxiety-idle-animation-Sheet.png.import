@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3ui3i7aevxjb"
-path="res://.godot/imported/parallax-cave-bg.png-474c1f1969fa77e0aa7b7cdf4141df42.ctex"
+uid="uid://bwf3c2ntqi0dy"
+path="res://.godot/imported/anxiety-idle-animation-Sheet.png-bb48b899ba770691e824bc7dc04e81a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/parallax-cave-bg.png"
-dest_files=["res://.godot/imported/parallax-cave-bg.png-474c1f1969fa77e0aa7b7cdf4141df42.ctex"]
+source_file="res://sprite/anxiety-idle-animation-Sheet.png"
+dest_files=["res://.godot/imported/anxiety-idle-animation-Sheet.png-bb48b899ba770691e824bc7dc04e81a3.ctex"]
 
 [params]
 
