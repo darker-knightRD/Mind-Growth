@@ -18,13 +18,5 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
-	
-
-func lock_player():
-	if get_tree().get_first_node_in_group("Inventory").inventory_open:
-		state_machine.jam = true
-	else:
-		state_machine.jam = false
-
 
 #Test
