@@ -4,10 +4,10 @@ var this_note = Note.new()
 @export var note_title:String
 @export var Sentence:String
 @export var label: Label
+@onready var panel_container: PanelContainer = $CanvasLayer/PanelContainer
 var player_in_area:bool
 
 func _ready() -> void:
-	label.visible = false
 	this_note.title = note_title
 	this_note.dialogue = Sentence
 
@@ -23,11 +23,11 @@ func _on_body_entered(body: Node2D) -> void:
 	
 
 func show_dialogue() -> void:
-	label.visible = true
+	panel_container.visible = true
 	label.text = Sentence
 	player_in_area = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	label.visible = false
+	panel_container.visible = false
 	player_in_area = true
