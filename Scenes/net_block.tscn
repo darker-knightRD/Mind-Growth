@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlhiu0u5ye14w"]
+[gd_scene load_steps=4 format=3 uid="uid://dlhiu0u5ye14w"]
 
 [ext_resource type="Texture2D" uid="uid://baqfsb1ddgjus" path="res://sprite/cave-tileset.webp" id="1_prib4"]
+
+[sub_resource type="GDScript" id="GDScript_a7sw3"]
+script/source = "extends Node2D
+
+func _process(delta: float) -> void:
+	if NoteInventory.note_collected_count == 6:
+		queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvufj"]
 size = Vector2(20, 30)
 
 [node name="net_block" type="Node2D"]
+script = SubResource("GDScript_a7sw3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 8

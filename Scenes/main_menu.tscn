@@ -42,6 +42,19 @@ text = "New Game"
 layout_mode = 2
 text = "Exit"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -361.0
+offset_top = -248.0
+offset_right = 450.0
+offset_bottom = -73.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "Mind Growth"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
