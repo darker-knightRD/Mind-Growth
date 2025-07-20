@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bppncm0fpps0u"]
+[gd_scene load_steps=20 format=3 uid="uid://bppncm0fpps0u"]
 
 [ext_resource type="Script" uid="uid://h3m4ki2e1vs2" path="res://Scripts/main_player.gd" id="1_0sgo8"]
 [ext_resource type="Texture2D" uid="uid://r06fnlxryf7g" path="res://sprite/player-idle-animation.webp" id="2_jsrhp"]
@@ -9,10 +9,16 @@
 [ext_resource type="Script" uid="uid://ohl57m4cvn6o" path="res://Scripts/States/PlayerStates/fall.gd" id="6_ts1ug"]
 [ext_resource type="Texture2D" uid="uid://b4f6l7x2yd2wp" path="res://sprite/player-walking-animation-Sheet.webp" id="8_4ui42"]
 [ext_resource type="Texture2D" uid="uid://jjd66jywmlud" path="res://sprite/player-jump-sprite.png" id="9_4ui42"]
+[ext_resource type="AudioStream" uid="uid://fycuapcfpoqo" path="res://music and sfx/DIRT - Hard Walk 2 edited.mp3" id="10_3k7xu"]
+[ext_resource type="AudioStream" uid="uid://blto0a2q28n55" path="res://music and sfx/Post Jump 4 mg.mp3" id="11_3k7xu"]
+
+[sub_resource type="Gradient" id="Gradient_4ui42"]
+offsets = PackedFloat32Array(0, 0.882199, 0.986911)
+colors = PackedColorArray(0.443137, 0.443137, 0.0431373, 1, 0.486275, 0.486275, 0.0745098, 0.368627, 0.486275, 0.486275, 0.0745098, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6buqx"]
-radius = 9.0
-height = 34.0
+radius = 8.0
+height = 28.0
 
 [sub_resource type="Animation" id="Animation_me6vj"]
 tracks/0/type = "value"
@@ -229,6 +235,10 @@ _data = {
 &"move": SubResource("Animation_10hb0")
 }
 
+[sub_resource type="Gradient" id="Gradient_3k7xu"]
+offsets = PackedFloat32Array(0, 0.211886, 1)
+colors = PackedColorArray(0.457199, 1.39579e-05, 0.343033, 1, 0.638996, 0.221933, 0.533694, 1, 0.682353, 0.403922, 0.615686, 0.12549)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations", "sprite") groups=["Player"]]
 z_index = 10
 collision_mask = 30
@@ -239,11 +249,52 @@ move_speed = 500.0
 jump_force = 450.0
 sprite = NodePath("Sprite2D")
 
+[node name="CPUParticleswalk" type="CPUParticles2D" parent="."]
+z_index = 20
+position = Vector2(-1, 15)
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 0.22
+randomness = 0.58
+emission_shape = 3
+emission_rect_extents = Vector2(6.97, 1.445)
+direction = Vector2(10, -20)
+spread = 148.19
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 25.0
+damping_min = 20.0
+damping_max = 25.0
+color_ramp = SubResource("Gradient_4ui42")
+
+[node name="CPUParticlesjump" type="CPUParticles2D" parent="."]
+z_index = 20
+position = Vector2(-1, 15)
+emitting = false
+amount = 600
+lifetime = 0.88
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(7.485, 2.6)
+direction = Vector2(10, -20)
+spread = 148.19
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 70.0
+damping_min = 60.0
+damping_max = 70.0
+color_ramp = SubResource("Gradient_4ui42")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jsrhp")
 hframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_6buqx")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
@@ -293,3 +344,36 @@ autoplay = "move"
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 limit_bottom = 658
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 5.25
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
+
+[node name="AudioStreamPlayerWalking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_3k7xu")
+bus = &"sfx"
+
+[node name="AudioStreamPlayerJumping" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_3k7xu")
+bus = &"sfx"
+
+[node name="CPUParticlesdeath" type="CPUParticles2D" parent="."]
+position = Vector2(1, 4)
+emitting = false
+amount = 500
+explosiveness = 0.29
+randomness = 0.61
+lifetime_randomness = 0.25
+emission_shape = 2
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+damping_min = 50.0
+damping_max = 100.0
+color_ramp = SubResource("Gradient_3k7xu")

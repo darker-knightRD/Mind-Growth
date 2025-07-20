@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://biwrwmyr3ui6p"]
+
+[ext_resource type="AudioStream" uid="uid://cwwj5hpjc56os" path="res://music and sfx/where am i_ 2_horror.mp3" id="1_d7qk6"]
+[ext_resource type="AudioStream" uid="uid://5u6n7yiyccvm" path="res://music and sfx/Mental Vortex Loop 1.mp3" id="2_fuulc"]
+
+[node name="BgHorrormusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_d7qk6")
+autoplay = true
+bus = &"BG music"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_fuulc")
+autoplay = true
+bus = &"2nd bg music"
