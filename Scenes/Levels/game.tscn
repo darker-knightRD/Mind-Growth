@@ -973,7 +973,7 @@ size = Vector2(34, 22)
 metadata/_edit_horizontal_guides_ = [-467.0]
 
 [node name="Player" parent="." instance=ExtResource("1_ds3o4")]
-position = Vector2(-294, -692)
+position = Vector2(-655, 325)
 move_speed = 200.0
 
 [node name="next_level" parent="." instance=ExtResource("2_72uep")]
@@ -1153,7 +1153,7 @@ speed_scale = 0.5
 [node name="Notes" type="Node" parent="."]
 
 [node name="Note" parent="Notes" instance=ExtResource("10_7l4mf")]
-position = Vector2(433, -899)
+position = Vector2(433, -890)
 note_title = "doubt"
 Sentence = " What if I give this project my all, and it’s still not enough? What if people don’t care, or don’t like it?"
 
