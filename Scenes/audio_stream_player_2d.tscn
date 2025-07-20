@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm64od03g7kom"]
+
+[ext_resource type="AudioStream" uid="uid://8mg17jgdijuh" path="res://audio and sfx/where am i_ 2_horror.mp3" id="1_d2dya"]
+[ext_resource type="Script" uid="uid://cc12dqcv31ag4" path="res://Scripts/BGmusic.gd" id="1_kajln"]
+[ext_resource type="AudioStream" uid="uid://fsheflpt1sd3" path="res://audio and sfx/forest Chilly Beach Song.mp3" id="2_oqiei"]
+
+[node name="cave" type="Node2D"]
+script = ExtResource("1_kajln")
+
+[node name="forest" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_oqiei")
+bus = &"Music"
+
+[node name="cave" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_d2dya")
