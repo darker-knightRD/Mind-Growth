@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 NoteInventory="*res://Scripts/note_inventory.gd"
+AutoBGMusic="*res://Scenes/audio_stream_player_2d.tscn"
 
 [display]
 
