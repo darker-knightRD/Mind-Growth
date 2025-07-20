@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://chexitbsqojjb"]
+[gd_scene load_steps=5 format=3 uid="uid://chexitbsqojjb"]
 
 [ext_resource type="Script" uid="uid://cs26mfry6f4w2" path="res://Scripts/Objects/note.gd" id="1_bv6e1"]
+[ext_resource type="Texture2D" uid="uid://b6wr3hdll0wpj" path="res://sprite/notepng.png" id="2_s26px"]
 [ext_resource type="Texture2D" uid="uid://bfifxupsleh5w" path="res://sprite/cave-tileset (1).webp" id="2_yjfqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s26px"]
@@ -9,6 +10,7 @@ size = Vector2(16, 16)
 [node name="Note" type="Area2D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_bv6e1")
 label = NodePath("CanvasLayer/PanelContainer/MarginContainer/Label")
+pic = ExtResource("2_s26px")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
