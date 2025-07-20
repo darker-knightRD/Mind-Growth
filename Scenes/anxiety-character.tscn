@@ -1,6 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcnjx02gol1eg"]
+[gd_scene load_steps=16 format=3 uid="uid://dcnjx02gol1eg"]
 
 [ext_resource type="Texture2D" uid="uid://bwf3c2ntqi0dy" path="res://sprite/anxiety-idle-animation-Sheet.png" id="1_vudfy"]
+
+[sub_resource type="GDScript" id="GDScript_vudfy"]
+script/source = "extends StaticBody2D
+
+func _process(delta: float) -> void:
+	if NoteInventory.note_collected_count >= 6:
+		queue_free()
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3gfk"]
 atlas = ExtResource("1_vudfy")
@@ -90,7 +98,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lr5r8"]
 size = Vector2(28, 37)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="StaticBody2D"]
+collision_layer = 3
+script = SubResource("GDScript_vudfy")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -104,5 +114,9 @@ autoplay = "idle"
 frame_progress = 0.42914
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(6, -2.5)
+shape = SubResource("RectangleShape2D_lr5r8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -2.5)
 shape = SubResource("RectangleShape2D_lr5r8")
