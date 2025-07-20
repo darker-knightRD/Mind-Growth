@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://chexitbsqojjb"]
+[gd_scene load_steps=5 format=3 uid="uid://chexitbsqojjb"]
 
 [ext_resource type="Script" uid="uid://cs26mfry6f4w2" path="res://Scripts/Objects/note.gd" id="1_bv6e1"]
+[ext_resource type="Texture2D" uid="uid://c3sst4aldde2s" path="res://sprite/notepng.png" id="2_s26px"]
 [ext_resource type="Texture2D" uid="uid://bfifxupsleh5w" path="res://sprite/cave-tileset (1).webp" id="2_yjfqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s26px"]
@@ -9,6 +10,7 @@ size = Vector2(16, 16)
 [node name="Note" type="Area2D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_bv6e1")
 label = NodePath("CanvasLayer/PanelContainer/MarginContainer/Label")
+pic = ExtResource("2_s26px")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -40,11 +42,13 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "test"
+theme_override_font_sizes/font_size = 36
+text = "test test test test"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
