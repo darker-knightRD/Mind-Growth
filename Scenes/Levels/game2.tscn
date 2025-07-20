@@ -819,7 +819,7 @@ size = Vector2(77, 42)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_o2u8j"]
 b = Vector2(65.3285, 1.03735)
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_75d0i")]
 position = Vector2(120, 592)

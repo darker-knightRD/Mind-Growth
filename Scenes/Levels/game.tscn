@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://baqfsb1ddgjus" path="res://sprite/cave-tileset.webp" id="4_i10s3"]
 [ext_resource type="Texture2D" uid="uid://vaet1vo8b7m2" path="res://sprite/cave-tileset.png" id="4_q2try"]
 [ext_resource type="Texture2D" uid="uid://bfifxupsleh5w" path="res://sprite/cave-tileset (1).webp" id="5_c11q5"]
-[ext_resource type="PackedScene" uid="uid://c7kql2bydlfxe" path="res://Scenes/moving_platform.tscn" id="5_yla1s"]
+[ext_resource type="PackedScene" uid="uid://b5kcuhd5mk4ap" path="res://Scenes/moving_platform.tscn" id="5_yla1s"]
 [ext_resource type="PackedScene" uid="uid://dtbdr3fhfs3lp" path="res://Scenes/Objects/killzone.tscn" id="6_q2try"]
 [ext_resource type="PackedScene" uid="uid://chexitbsqojjb" path="res://Scenes/Objects/note.tscn" id="10_7l4mf"]
 [ext_resource type="Texture2D" uid="uid://c3ui3i7aevxjb" path="res://sprite/parallax-cave-bg.png" id="11_7l4mf"]
