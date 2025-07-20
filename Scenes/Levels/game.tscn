@@ -1025,7 +1025,7 @@ note_title = "doubt"
 Sentence = " What if I give this project my all, and it’s still not enough? What if people don’t care, or don’t like it?"
 
 [node name="Note2" parent="Notes" instance=ExtResource("10_7l4mf")]
-position = Vector2(690, 575)
+position = Vector2(-625, 382)
 note_title = "fear"
 Sentence = "There’s too many things to do… I can’t handle all of this. I hardly know where to start."
 
