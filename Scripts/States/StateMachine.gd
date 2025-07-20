@@ -2,6 +2,7 @@ extends Node
 
 @export var starting_state:State
 var current_state:State
+var jam:bool = false
 
 func init(parent:CharacterBody2D, sprite:Sprite2D,animations:AnimationPlayer, move_speed:float, jump_force:float) -> void:
 	for child in get_children():
@@ -13,7 +14,7 @@ func init(parent:CharacterBody2D, sprite:Sprite2D,animations:AnimationPlayer, mo
 	change_state(starting_state)
 	
 func change_state(new_state:State) -> void:
-	if new_state.is_unlocked:
+	if new_state.is_unlocked and !jam:
 		if current_state:
 			current_state.exit()
 		current_state = new_state
@@ -33,3 +34,11 @@ func process_frame(delta: float) -> void:
 	var new_state = current_state.process_frame(delta)
 	if new_state:
 		change_state(new_state)
+		
+func lock() -> void:
+	for child in get_children():
+		child.is_unlocked = false
+
+func unlock() -> void:
+	for child in get_children():
+		child.is_unlocked = true
