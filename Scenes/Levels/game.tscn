@@ -864,7 +864,10 @@ Sentence = " I really don’t know how to go about doing any of this to achieve 
 position = Vector2(-1023, 381)
 note_title = "giveup"
 Sentence = " I’ve put off starting for so long, I don’t think I can at this point…"
+<<<<<<< Updated upstream
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("12_xdwyp")]
+=======
+>>>>>>> Stashed changes
