@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fsheflpt1sd3"
+path="res://.godot/imported/forest Chilly Beach Song.mp3-0bbc602ddf5076f3de2cb39a2aef461b.mp3str"
+
+[deps]
+
+source_file="res://audio and sfx/forest Chilly Beach Song.mp3"
+dest_files=["res://.godot/imported/forest Chilly Beach Song.mp3-0bbc602ddf5076f3de2cb39a2aef461b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
