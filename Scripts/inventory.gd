@@ -10,6 +10,9 @@ func _ready():
 	icon_calculate()
 	
 
+func get_note() -> Note:
+	return notes[current_index]
+
 func _process(delta: float) -> void:
 	panel_container.visible = label.visible
 
@@ -26,7 +29,9 @@ func _input(event: InputEvent) -> void:
 	if inventory_open and Input.is_action_just_pressed("close inventory"):
 		inventory_open = false
 		label.visible = false
+		close_highlight()
 		get_tree().get_first_node_in_group("Player").lock_player()
+		current_index = 0
 	
 
 func _update_highlight():
@@ -34,6 +39,10 @@ func _update_highlight():
 		var child = get_child(i)
 		child.modulate = Color(0.7, 0.7, 0.7) if i == current_index else Color(1, 1, 1)
 	
+
+func close_highlight():
+	for i in get_children():
+		i.modulate = Color(1, 1, 1)
 
 func _on_left_pressed():
 	current_index = (current_index - 1 + notes.size()) % notes.size()

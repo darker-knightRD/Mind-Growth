@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_just_pressed("Interact"):
 			NoteInventory.Notes.append(this_note)
+			NoteInventory.note_collected_count += 1
 			get_tree().get_first_node_in_group("Inventory").icon_calculate()
 			queue_free()
 

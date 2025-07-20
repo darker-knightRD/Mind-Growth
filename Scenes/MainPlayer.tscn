@@ -12,6 +12,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6buqx"]
 radius = 9.0
+height = 34.0
 
 [sub_resource type="Gradient" id="Gradient_4ui42"]
 colors = PackedColorArray(0.482353, 0.482353, 0.482353, 0.854902, 1, 1, 1, 0)

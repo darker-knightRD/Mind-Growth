@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://c0twabnjr05fa"]
+[gd_scene load_steps=29 format=3 uid="uid://c0twabnjr05fa"]
 
 [ext_resource type="Texture2D" uid="uid://bab6q4m738qpo" path="res://sprite/altar-fire-continue-animation-Sheet.webp" id="1_3kj86"]
 [ext_resource type="Texture2D" uid="uid://cxt137nqwa1ig" path="res://sprite/forest_tileset.webp" id="1_4mvoq"]
+[ext_resource type="Script" uid="uid://d3rbg0fwgkg18" path="res://Scripts/Objects/alter.gd" id="1_lhr1o"]
 [ext_resource type="Texture2D" uid="uid://bdxnqg37pduot" path="res://sprite/altar-start-fire-animation-Sheet.webp" id="3_t8srw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76pf4"]
@@ -179,6 +180,7 @@ animations = [{
 z_index = 5
 collision_layer = 8
 collision_mask = 23
+script = ExtResource("1_lhr1o")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_76pf4")
@@ -195,3 +197,23 @@ sprite_frames = SubResource("SpriteFrames_nlgvo")
 animation = &"continu_burning"
 autoplay = "start_burning"
 frame_progress = 0.774392
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_altar_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_altar_body_exited"]

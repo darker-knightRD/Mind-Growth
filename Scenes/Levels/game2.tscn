@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://d2b2nip3s8w4n"]
+[gd_scene load_steps=24 format=4 uid="uid://d2b2nip3s8w4n"]
 
 [ext_resource type="PackedScene" uid="uid://bppncm0fpps0u" path="res://Scenes/MainPlayer.tscn" id="1_75d0i"]
 [ext_resource type="PackedScene" uid="uid://08ly2ts2yrr4" path="res://Scenes/next_level.tscn" id="2_75d0i"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c0twabnjr05fa" path="res://Scenes/alter.tscn" id="12_mxio5"]
 [ext_resource type="Texture2D" uid="uid://c3ui3i7aevxjb" path="res://sprite/parallax-cave-bg.png" id="12_xpcg8"]
 [ext_resource type="Texture2D" uid="uid://bsdiqhgyhkmo7" path="res://sprite/parallax-cave-bg-tall-rocks.png" id="13_pqq3c"]
+[ext_resource type="PackedScene" uid="uid://6soqn2lrkera" path="res://User Interface/inventory.tscn" id="14_pqq3c"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_nye4l"]
 tile_data = PackedInt32Array(0, 393216, 3, 65536, 393216, 4, 1, 458752, 3, 65537, 458752, 4)
@@ -1505,20 +1506,41 @@ texture = ExtResource("5_rvasn")
 region_enabled = true
 region_rect = Rect2(278, 151, 21, 9)
 
-[node name="alter" parent="." instance=ExtResource("12_mxio5")]
+[node name="alter" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("12_mxio5")]
 position = Vector2(838, 418)
+inventory = NodePath("../CanvasLayer/Inventory")
+title = "doubt"
+dialogue = "No matter what other people think, I’ll be proud that I made something I wanted to create. That is success in itself."
 
-[node name="alter2" parent="." instance=ExtResource("12_mxio5")]
+[node name="alter2" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("12_mxio5")]
 position = Vector2(243, 599)
+inventory = NodePath("../CanvasLayer/Inventory")
+title = "fear"
+dialogue = "I can break down my goals into smaller steps, and do things one at a time."
 
-[node name="alter3" parent="." instance=ExtResource("12_mxio5")]
+[node name="alter3" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("12_mxio5")]
 position = Vector2(379, 582)
+inventory = NodePath("../CanvasLayer/Inventory")
+title = "panic"
+dialogue = " My body is trying to prepare me. I will release the energy stored inside me by moving my body to ground myself in the moment."
 
-[node name="alter4" parent="." instance=ExtResource("12_mxio5")]
+[node name="alter4" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("12_mxio5")]
 position = Vector2(346, -137)
+inventory = NodePath("../CanvasLayer/Inventory")
+title = "insecure"
+dialogue = " I’m showing up and steadily improving my skills, which is better than never trying at all."
 
-[node name="alter5" parent="." instance=ExtResource("12_mxio5")]
+[node name="alter5" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("12_mxio5")]
 position = Vector2(841, -108)
+inventory = NodePath("../CanvasLayer/Inventory")
+title = "doubt2"
+dialogue = "I can ask others for help and advice on how to get the resources and knowledge I need."
+
+[node name="alter6" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("12_mxio5")]
+position = Vector2(617, -309)
+inventory = NodePath("../CanvasLayer/Inventory")
+title = "giveup"
+dialogue = "I know I’ve been scared to do this, but I’m here to  support myself. I trust in my ability to start, learn, and change."
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1537,6 +1559,10 @@ motion_mirroring = Vector2(640, 460)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Tall Rocks"]
 texture = ExtResource("13_pqq3c")
 centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("14_pqq3c")]
 
 [editable path="branch/branches2"]
 [editable path="branch/branches16"]
