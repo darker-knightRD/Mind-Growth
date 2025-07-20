@@ -515,6 +515,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_c11q5"]
 resource_name = "way_up"
+length = 1.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -523,7 +524,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(200, -104), Vector2(200, -439)]
@@ -628,6 +629,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gqwak"]
 resource_name = "up"
+length = 2.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -636,7 +638,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 1),
+"times": PackedFloat32Array(0.0333333, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(200, -486), Vector2(200, -957)]
@@ -1020,12 +1022,12 @@ speed_scale = 0.5
 [node name="Notes" type="Node" parent="."]
 
 [node name="Note" parent="Notes" instance=ExtResource("10_7l4mf")]
-position = Vector2(463, -906)
+position = Vector2(433, -899)
 note_title = "doubt"
 Sentence = " What if I give this project my all, and it’s still not enough? What if people don’t care, or don’t like it?"
 
 [node name="Note2" parent="Notes" instance=ExtResource("10_7l4mf")]
-position = Vector2(-625, 382)
+position = Vector2(670, 572)
 note_title = "fear"
 Sentence = "There’s too many things to do… I can’t handle all of this. I hardly know where to start."
 
