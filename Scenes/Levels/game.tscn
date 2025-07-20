@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://c4npyuft3dwt1"]
+[gd_scene load_steps=55 format=4 uid="uid://c4npyuft3dwt1"]
 
 [ext_resource type="PackedScene" uid="uid://bppncm0fpps0u" path="res://Scenes/MainPlayer.tscn" id="1_ds3o4"]
 [ext_resource type="PackedScene" uid="uid://08ly2ts2yrr4" path="res://Scenes/next_level.tscn" id="2_72uep"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ui3i7aevxjb" path="res://sprite/parallax-cave-bg.png" id="11_7l4mf"]
 [ext_resource type="Texture2D" uid="uid://bsdiqhgyhkmo7" path="res://sprite/parallax-cave-bg-tall-rocks.png" id="12_xdwyp"]
 [ext_resource type="PackedScene" uid="uid://dcnjx02gol1eg" path="res://Scenes/anxiety-character.tscn" id="13_ahqd5"]
+[ext_resource type="PackedScene" uid="uid://6soqn2lrkera" path="res://User Interface/inventory.tscn" id="14_dw2ve"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dw2ve"]
 texture = ExtResource("4_ahqd5")
@@ -1073,3 +1074,7 @@ offset_top = 510.0
 offset_right = 99.0
 offset_bottom = 533.0
 text = "wasd + arrows to walk and space to jump"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("14_dw2ve")]
