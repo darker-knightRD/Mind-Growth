@@ -1016,6 +1016,7 @@ libraries = {
 autoplay = "SIDE"
 speed_scale = 0.5
 
+<<<<<<< Updated upstream
 [node name="Note" parent="." instance=ExtResource("10_7l4mf")]
 position = Vector2(-26, 207)
 note_title = "HALLO"
@@ -1049,3 +1050,53 @@ Sentence = "HELLASOA"
 [node name="Anxiety Character" parent="." instance=ExtResource("13_ahqd5")]
 z_index = 10
 position = Vector2(842, 353)
+=======
+[node name="Pots" type="Node" parent="."]
+
+[node name="pot" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-1203, 395)
+
+[node name="pot2" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-242, 587)
+
+[node name="pot3" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-171, 588)
+
+[node name="pot4" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(-124, 588)
+
+[node name="pot5" parent="Pots" instance=ExtResource("10_q2try")]
+position = Vector2(245, 588)
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="Note" parent="Notes" instance=ExtResource("10_7l4mf")]
+position = Vector2(-1108, 381)
+note_title = "doubt"
+Sentence = " What if I give this project my all, and it’s still not enough? What if people don’t care, or don’t like it?"
+
+[node name="Note2" parent="Notes" instance=ExtResource("10_7l4mf")]
+position = Vector2(-1091, 381)
+note_title = "fear"
+Sentence = "There’s too many things to do… I can’t handle all of this. I hardly know where to start."
+
+[node name="Note3" parent="Notes" instance=ExtResource("10_7l4mf")]
+position = Vector2(-1074, 381)
+note_title = "panic"
+Sentence = "I can’t stop shaking, my body won’t relaxing. My heart is racing and this doesn’t feel good."
+
+[node name="Note4" parent="Notes" instance=ExtResource("10_7l4mf")]
+position = Vector2(-1057, 381)
+note_title = "insecure"
+Sentence = "Every time I write, it’s not as good as I want it to be. I feel like a bad writer."
+
+[node name="Note5" parent="Notes" instance=ExtResource("10_7l4mf")]
+position = Vector2(-1040, 381)
+note_title = "doubt"
+Sentence = " I really don’t know how to go about doing any of this to achieve my dreams… Someone else would better know how to do this."
+
+[node name="Note6" parent="Notes" instance=ExtResource("10_7l4mf")]
+position = Vector2(-1023, 381)
+note_title = "giveup"
+Sentence = " I’ve put off starting for so long, I don’t think I can at this point…"
+>>>>>>> Stashed changes

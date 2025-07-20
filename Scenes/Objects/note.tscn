@@ -40,11 +40,13 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "test"
+theme_override_font_sizes/font_size = 36
+text = "test test test test"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
