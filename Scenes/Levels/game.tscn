@@ -1049,3 +1049,25 @@ Sentence = "HELLASOA"
 [node name="Anxiety Character" parent="." instance=ExtResource("13_ahqd5")]
 z_index = 10
 position = Vector2(842, 353)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 426.0
+offset_top = 456.0
+offset_right = 714.0
+offset_bottom = 505.0
+text = "press e to collect the note
+i to open inventory and esc to close it"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -762.0
+offset_top = 262.0
+offset_right = -388.0
+offset_bottom = 285.0
+text = "Collect the notes then the door will open for you"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -219.0
+offset_top = 510.0
+offset_right = 99.0
+offset_bottom = 533.0
+text = "wasd + arrows to walk and space to jump"
