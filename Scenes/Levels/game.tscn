@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bppncm0fpps0u" path="res://Scenes/MainPlayer.tscn" id="1_ds3o4"]
 [ext_resource type="PackedScene" uid="uid://08ly2ts2yrr4" path="res://Scenes/next_level.tscn" id="2_72uep"]
-[ext_resource type="PackedScene" uid="uid://d2b2nip3s8w4n" path="res://Scenes/Levels/game2.tscn" id="3_b2ers"]
+[ext_resource type="PackedScene" uid="uid://m0d81r0xkrwh" path="res://Scenes/Levels/finish scene.tscn" id="3_dw2ve"]
 [ext_resource type="Texture2D" uid="uid://dm6d74n253fp1" path="res://sprite/tall-rocks.png" id="4_ahqd5"]
 [ext_resource type="Texture2D" uid="uid://baqfsb1ddgjus" path="res://sprite/cave-tileset.webp" id="4_i10s3"]
 [ext_resource type="Texture2D" uid="uid://vaet1vo8b7m2" path="res://sprite/cave-tileset.png" id="4_q2try"]
@@ -850,7 +850,7 @@ position = Vector2(696, -271)
 
 [node name="next_level" parent="." instance=ExtResource("2_72uep")]
 position = Vector2(1077, 346)
-next_level = ExtResource("3_b2ers")
+next_level = ExtResource("3_dw2ve")
 
 [node name="Hidden-Areas-TileMapLayer" type="TileMapLayer" parent="."]
 visibility_layer = 5
