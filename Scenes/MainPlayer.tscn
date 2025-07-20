@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bppncm0fpps0u"]
+[gd_scene load_steps=17 format=3 uid="uid://bppncm0fpps0u"]
 
 [ext_resource type="Script" uid="uid://h3m4ki2e1vs2" path="res://Scripts/main_player.gd" id="1_0sgo8"]
 [ext_resource type="Texture2D" uid="uid://r06fnlxryf7g" path="res://sprite/player-idle-animation.webp" id="2_jsrhp"]
@@ -12,7 +12,9 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6buqx"]
 radius = 9.0
-height = 34.0
+
+[sub_resource type="Gradient" id="Gradient_4ui42"]
+colors = PackedColorArray(0.482353, 0.482353, 0.482353, 0.854902, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_me6vj"]
 tracks/0/type = "value"
@@ -244,7 +246,33 @@ texture = ExtResource("2_jsrhp")
 hframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_6buqx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 15)
+emitting = false
+amount = 100
+lifetime = 0.48
+one_shot = true
+speed_scale = 0.3
+randomness = 0.2
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(6.1, 1.715)
+particle_flag_align_y = true
+direction = Vector2(10.77, 5.235)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 25.0
+damping_min = 20.0
+damping_max = 25.0
+angle_min = 20.0
+angle_max = 25.0
+scale_amount_min = 0.3
+color_initial_ramp = SubResource("Gradient_4ui42")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("3_6rt1g")
