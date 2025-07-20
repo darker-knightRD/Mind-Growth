@@ -13,10 +13,10 @@ func _ready():
 func get_note() -> Note:
 	return notes[current_index]
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	panel_container.visible = label.visible
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if !inventory_open and Input.is_action_just_pressed("open inventory") and !notes.is_empty():
 		inventory_open = true
 		get_tree().get_first_node_in_group("Player").lock_player()

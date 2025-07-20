@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blto0a2q28n55"
+path="res://.godot/imported/Post Jump 4 mg.mp3-04fc0c7dbc4ae1e9e1337912dbbfad16.mp3str"
+
+[deps]
+
+source_file="res://music and sfx/Post Jump 4 mg.mp3"
+dest_files=["res://.godot/imported/Post Jump 4 mg.mp3-04fc0c7dbc4ae1e9e1337912dbbfad16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

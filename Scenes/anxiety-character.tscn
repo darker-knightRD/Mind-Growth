@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id="GDScript_vudfy"]
 script/source = "extends StaticBody2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if NoteInventory.note_collected_count >= 6:
 		queue_free()
 "

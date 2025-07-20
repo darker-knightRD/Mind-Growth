@@ -14,7 +14,7 @@ func _ready() -> void:
 	this_note.dialogue = Sentence
 	this_note.pic = pic
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_just_pressed("Interact"):
 			NoteInventory.Notes.append(this_note)
@@ -33,6 +33,6 @@ func show_dialogue() -> void:
 	label.text = Sentence
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	panel_container.visible = false
 	player_in_area = false

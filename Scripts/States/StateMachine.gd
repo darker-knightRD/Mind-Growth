@@ -2,8 +2,11 @@ extends Node
 
 @export var starting_state:State
 var current_state:State
-@onready var cpu_particles: CPUParticles2D = $"../CPUParticles2D"
-var jam:bool = false
+@onready var audio_stream_player_walking: AudioStreamPlayer2D = $"../AudioStreamPlayerWalking"
+@onready var audio_stream_player_jumping: AudioStreamPlayer2D = $"../AudioStreamPlayerJumping"
+
+
+var jam:bool = false 
 
 func init(parent:CharacterBody2D, sprite:Sprite2D,animations:AnimationPlayer, move_speed:float, jump_force:float) -> void:
 	for child in get_children():
